@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #f0f0f0;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -24,20 +24,18 @@ body {
 
 /* Styling kalkulator */
 .calculator {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    max-width: 350px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
     width: 100%;
 }
 
 /* Display area */
 .display {
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
+    background: #f8f8f8;
+    border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
     text-align: right;
@@ -45,21 +43,22 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 1px solid #e0e0e0;
 }
 
 .previous-operand {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1rem;
+    color: #666;
+    font-size: 0.9rem;
     min-height: 1.2rem;
     word-wrap: break-word;
     word-break: break-all;
 }
 
 .current-operand {
-    color: white;
-    font-size: 2rem;
+    color: #333;
+    font-size: 1.8rem;
     font-weight: bold;
-    min-height: 2.4rem;
+    min-height: 2rem;
     word-wrap: break-word;
     word-break: break-all;
 }
@@ -68,94 +67,84 @@ body {
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    gap: 10px;
 }
 
 /* Styling tombol */
 .btn {
     border: none;
-    border-radius: 12px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    height: 60px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    height: 50px;
     cursor: pointer;
     transition: all 0.2s ease;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: #f5f5f5;
+    color: #333;
+    border: 1px solid #e0e0e0;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .btn:active {
     transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Styling khusus untuk jenis tombol */
 .btn-number {
-    background: rgba(255, 255, 255, 0.2);
+    background: #f5f5f5;
+    color: #333;
 }
 
 .btn-number:hover {
-    background: rgba(255, 255, 255, 0.35);
+    background: #eeeeee;
 }
 
 .btn-operator {
-    background: rgba(255, 165, 0, 0.7);
+    background: #ff9500;
     color: white;
+    font-weight: bold;
 }
 
 .btn-operator:hover {
-    background: rgba(255, 165, 0, 0.9);
+    background: #e6850e;
 }
 
 .btn-equals {
-    background: rgba(255, 69, 0, 0.8);
-    grid-row: span 2;
+    background: #ff9500;
     color: white;
+    font-weight: bold;
 }
 
 .btn-equals:hover {
-    background: rgba(255, 69, 0, 1);
+    background: #e6850e;
 }
 
-.btn-clear {
-    background: rgba(220, 20, 60, 0.7);
+.btn-reset {
+    background: #dc3545;
     color: white;
+    font-weight: bold;
+    grid-column: span 4;
+    margin-top: 10px;
 }
 
-.btn-clear:hover {
-    background: rgba(220, 20, 60, 0.9);
-}
-
-.btn-delete {
-    background: rgba(255, 140, 0, 0.7);
-    color: white;
-}
-
-.btn-delete:hover {
-    background: rgba(255, 140, 0, 0.9);
-}
-
-.btn-zero {
-    grid-column: span 2;
+.btn-reset:hover {
+    background: #c82333;
 }
 
 /* Responsive design */
 @media (max-width: 480px) {
     .calculator {
-        padding: 20px;
+        padding: 15px;
         margin: 10px;
     }
     
     .btn {
-        height: 50px;
+        height: 45px;
         font-size: 1rem;
     }
     
@@ -164,21 +153,21 @@ body {
     }
     
     .previous-operand {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     
     .buttons {
-        gap: 10px;
+        gap: 8px;
     }
 }
 
 @media (max-width: 320px) {
     .calculator {
-        padding: 15px;
+        padding: 12px;
     }
     
     .btn {
-        height: 45px;
+        height: 40px;
         font-size: 0.9rem;
     }
     
